@@ -1,27 +1,26 @@
 <template>
   <div class="content">
-    <range :min="10" :max="100" v-model="sliderValue" :isShowTip="true"></range>
+    <range v-model="sliderValue" :min="10" :max="100" :is-show-tip="true" />
   </div>
 </template>
 <script>
-import range from "@/components/range.vue";
+import range from '@/components/slider'
 export default {
+  components: {
+    range
+  },
   data() {
     return {
       sliderValue: 10
-    };
-  },
-  components: {
-    range
+    }
   },
   created() {},
   mounted() {},
   methods: {}
-};
+}
 </script>
 <style scoped>
 .content {
-  width: 500px;
-  margin: 50px auto;
+  margin: 50px 200px;
 }
 </style>
