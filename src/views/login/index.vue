@@ -1,5 +1,5 @@
 <template>
-  <div class="login-container">
+  <div class="login-container" :style="{background:'url('+loginBg+')'}">
     <el-form ref="loginForm" :model="loginForm" :rules="loginRules" class="login-form" auto-complete="on" label-position="left">
 
       <div class="title-container">
@@ -83,7 +83,8 @@ export default {
       },
       loading: false,
       passwordType: 'password',
-      redirect: undefined
+      redirect: undefined,
+      loginBg: require('@/assets/bg.jpg')
     }
   },
   watch: {
@@ -180,7 +181,6 @@ $light_gray:#eee;
 .login-container {
   min-height: 100%;
   width: 100%;
-  background-color: $bg;
   overflow: hidden;
 
   .login-form {
