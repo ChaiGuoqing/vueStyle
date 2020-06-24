@@ -23,3 +23,54 @@ npm run build:prod
 
 # 克隆项目
 git clone https://github.com/ChaiGuoqing/vueStyle.git
+
+# 父组件调用子组件方法
+
+<!--父组件-->
+<template>
+  <div class="">
+    <div>
+      <el-row>
+        <el-button type="primary" @click="showA">A弹框</el-button>
+        <el-button type="success" @click="showB">B弹框</el-button>
+      </el-row>
+    </div>
+    <childA ref="childA" />
+    <childB ref="childB" />
+  </div>
+</template>
+<script>
+export default {
+  methods: {
+    showA() {
+      this.$refs.childA.showDialog()
+    },
+    showB() {
+      this.$refs.childB.showDialog()
+    }
+  }
+}
+</script>
+
+<!--子组件-->
+<script>
+export default {
+  methods: {
+    showDialog() {
+      this.dialogA = !this.dialogA
+    }
+  }
+}
+</script>
+
+# 子组件调用父组件方法
+
+<!--子组件-->
+<script>
+export default {
+  methods: {
+    showDialog() {
+      this.$parent.showB()
+    }
+  }
+}

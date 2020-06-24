@@ -135,6 +135,18 @@ export const constantRoutes = [
       }
     ]
   },
+  {
+    path: '/comsmit',
+    component: Layout,
+    children: [
+      {
+        path: 'index',
+        name: '组件传值',
+        component: () => import('@/views/comsmit/index'),
+        meta: { title: '组件传值', icon: 'link' }
+      }
+    ]
+  },
 
   { path: '*', redirect: '/404', hidden: true }
 ]
