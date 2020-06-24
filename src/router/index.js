@@ -138,12 +138,21 @@ export const constantRoutes = [
   {
     path: '/comsmit',
     component: Layout,
+    redirect: '/comsmit/child',
+    name: '组件通讯',
+    meta: { title: '组件通讯', icon: 'el-icon-s-help' },
     children: [
       {
-        path: 'index',
-        name: '组件传值',
-        component: () => import('@/views/comsmit/index'),
-        meta: { title: '组件传值', icon: 'link' }
+        path: 'child',
+        name: '父子组件',
+        component: () => import('@/views/comsmit/children/index'),
+        meta: { title: '父子组件', icon: 'table' }
+      },
+      {
+        path: 'brother',
+        name: '兄弟组件',
+        component: () => import('@/views/comsmit/brother/index'),
+        meta: { title: '兄弟组件', icon: 'tree' }
       }
     ]
   },

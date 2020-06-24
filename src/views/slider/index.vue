@@ -1,7 +1,7 @@
 <template>
   <div class="content">
     <div class="title">
-      <el-divider content-position="center">自定义滑块</el-divider>
+      <el-divider content-position="left">自定义滑块</el-divider>
     </div>
     <div class="btn">
       <el-row>
@@ -25,7 +25,7 @@
       </div>
     </div>
     <div class="title">
-      <el-divider content-position="center">elementUI滑块</el-divider>
+      <el-divider content-position="left">elementUI滑块</el-divider>
     </div>
     <div class="elementDemo">
       <div class="block">

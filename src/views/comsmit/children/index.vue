@@ -9,7 +9,7 @@
     </div>
     <childA ref="childA" :mess="messageA" />
     <childB ref="childB" :message="messageB" />
-    <el-divider class="line" content-position="center">父子组件互调方法</el-divider>
+    <el-divider class="line" content-position="left">父子组件互调方法</el-divider>
     <div class="tip">
       <span>
         1.父组件调用子组件方法
@@ -24,7 +24,7 @@
         b.在子组件中直接用<span style="color:red"> this.parent.方法名()</span>( 这个是父组件的方法 )
       </p>
     </div>
-    <el-divider class="line" content-position="center">父子组件互传参数</el-divider>
+    <el-divider class="line" content-position="left">父子组件互传参数</el-divider>
     <div class="tip">
       <span>
         1.父组件向子组件传参
@@ -47,8 +47,8 @@
 
 <script>
 
-import childA from './components/childA'
-import childB from './components/childB'
+import childA from '../components/childA'
+import childB from '../components/childB'
 export default {
   components: {
     childA,
