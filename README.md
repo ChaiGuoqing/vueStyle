@@ -20,3 +20,6 @@ npm run build:stage
 npm run build:prod
 ```
 浏览器访问 [https://chaiguoqing.github.io/vueStyle/dist/#]
+
+# 克隆项目
+git clone https://github.com/ChaiGuoqing/vueStyle.git
