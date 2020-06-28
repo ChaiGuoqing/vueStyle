@@ -10,7 +10,7 @@
       <p> {{ message }} </p>
       <span slot="footer" class="dialog-footer">
         <el-button @click="dialogB = false">取 消</el-button>
-        <el-button type="primary" @click="dialogB = false">确 定</el-button>
+        <el-button type="primary" @click="sendData2Father">确 定</el-button>
       </span>
     </el-dialog>
   </div>
@@ -28,12 +28,16 @@ export default {
   },
   data() {
     return {
-      dialogB: false
+      dialogB: false,
+      dataInfo: '子组件B给父组件请安'
     }
   },
   methods: {
     showDialog() {
       this.dialogB = !this.dialogB
+    },
+    sendData2Father() {
+
     }
   }
 }

@@ -56,8 +56,8 @@ export default {
   },
   data() {
     return {
-      messageA: '父组件传给A组件',
-      messageB: '父组件传给B组件'
+      messageA: '父组件给A组件发来贺电',
+      messageB: '父组件给B组件发来贺电'
     }
   },
   methods: {
