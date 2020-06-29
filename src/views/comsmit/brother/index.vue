@@ -65,12 +65,6 @@ export default {
       fromA: null
     }
   },
-  created() {
-
-  },
-  mounted() {
-
-  },
   // 方法集合
   methods: {
     fromDataA(data) {
@@ -87,29 +81,11 @@ export default {
   .com{
     width: 100%;
     display: flex;
-    .comA{
+    .comA ,.comC ,.comE{
       width: 50%;
       border: #ccc 1px solid;
     }
-    .comB{
-      width: 50%;
-      border: #ccc 1px solid;
-      margin-left: 20px;
-    }
-    .comC{
-      width: 50%;
-      border: #ccc 1px solid;
-    }
-    .comD{
-      width: 50%;
-      border: #ccc 1px solid;
-      margin-left: 20px;
-    }
-    .comE{
-      width: 50%;
-      border: #ccc 1px solid;
-    }
-    .comF{
+    .comB ,.comD ,.comF{
       width: 50%;
       border: #ccc 1px solid;
       margin-left: 20px;
