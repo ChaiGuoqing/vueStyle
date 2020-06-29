@@ -74,3 +74,16 @@ export default {
     }
   }
 }
+</script>
+
+# 兄弟组件间通讯
+
+#父传子 子传父方式 
+  brotherA.vue 
+  brotherB.vue
+#建中转站方式
+  brotherC.vue
+  brotherD.vue
+#vuex方式
+  brotherE.vue
+  brotherF.vue  
