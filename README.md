@@ -27,6 +27,7 @@ git clone https://github.com/ChaiGuoqing/vueStyle.git
 # 父组件调用子组件方法
 
 <!--父组件-->
+```
 <template>
   <div class="">
     <div>
@@ -52,7 +53,11 @@ export default {
 }
 </script>
 
+```
+
 <!--子组件-->
+
+```
 <script>
 export default {
   methods: {
@@ -61,12 +66,19 @@ export default {
     }
   }
 }
+
+
 </script>
+
+```
 
 # 子组件调用父组件方法
 
 <!--子组件-->
+
+```
 <script>
+  
 export default {
   methods: {
     showDialog() {
@@ -76,8 +88,11 @@ export default {
 }
 </script>
 
+```
+
 # 兄弟组件间通讯
 
+```
 ##父传子 子传父方式 
   brotherA.vue 
   brotherB.vue
@@ -93,3 +108,5 @@ export default {
 ##vuex方式
   brotherE.vue
   brotherF.vue  
+
+```
