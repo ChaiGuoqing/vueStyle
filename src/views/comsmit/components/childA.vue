@@ -8,9 +8,11 @@
     >
       <span>这是A弹框</span>
       <p>{{ mess }}</p>
+      <span>给父发送内容：</span><el-input v-model="dataInfo" style="width:60%" placeholder="请输入内容" />
       <span slot="footer" class="dialog-footer">
         <el-button @click="dialogAShowB">打开B弹框</el-button>
         <el-button @click="dialogA = false">取 消</el-button>
+        <el-button @click="sendData2Father">给父传值</el-button>
         <el-button type="primary" @click="sendData2Father">确 定</el-button>
       </span>
     </el-dialog>
@@ -42,7 +44,7 @@ export default {
     },
     sendData2Father() {
       this.dialogA = !this.dialogA
-      this.$emit('sendDataToParent', this.dataInfo)
+      this.$emit('sendDataAToParent', this.dataInfo)
     }
   }
 }
