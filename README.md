@@ -7,11 +7,11 @@ npm install
 ```
 # 启动服务
 npm run dev
-
+```
 
 ## 发布
 
-```bash
+```
 # 构建生产环境
 npm run build:prod
 ```
@@ -38,16 +38,16 @@ git clone https://github.com/ChaiGuoqing/vueStyle.git
   </div>
 </template>
 <script>
-export default {
-  methods: {
-    showA() {
-      this.$refs.childA.showDialog()
-    },
-    showB() {
-      this.$refs.childB.showDialog()
+  export default {
+    methods: {
+      showA() {
+        this.$refs.childA.showDialog()
+      },
+      showB() {
+        this.$refs.childB.showDialog()
+      }
     }
   }
-}
 </script>
 
 ```
@@ -56,15 +56,13 @@ export default {
 
 ```
 <script>
-export default {
-  methods: {
-    showDialog() {
-      this.dialogA = !this.dialogA
+  export default {
+    methods: {
+      showDialog() {
+        this.dialogA = !this.dialogA
+      }
     }
   }
-}
-
-
 </script>
 
 ```
@@ -75,14 +73,13 @@ export default {
 
 ```
 <script>
-  
-export default {
-  methods: {
-    showDialog() {
-      this.$parent.showB()
+  export default {
+    methods: {
+      showDialog() {
+        this.$parent.showB()
+      }
     }
   }
-}
 </script>
 
 ```
@@ -94,16 +91,10 @@ export default {
   brotherA.vue 
   brotherB.vue
 
-```
-
-```
 ##建中转站方式
   brotherC.vue
   brotherD.vue
 
-```
-
-```
 ##vuex方式
   brotherE.vue
   brotherF.vue  
