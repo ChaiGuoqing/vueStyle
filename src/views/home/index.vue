@@ -18,7 +18,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.dashboard {
+.home {
   &-container {
     margin: 30px;
   }

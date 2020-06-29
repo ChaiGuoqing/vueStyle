@@ -1,6 +1,6 @@
 
 
-# install dependency
+### install dependency
 npm install
 
 
@@ -15,13 +15,13 @@ npm run dev
 # 构建生产环境
 npm run build:prod
 ```
-# 浏览器访问
+### 浏览器访问
  https://chaiguoqing.github.io/vueStyle/dist/#
 
-# 克隆项目
+### 克隆项目
 git clone https://github.com/ChaiGuoqing/vueStyle.git
 
-# 父组件调用子组件方法
+### 父组件调用子组件方法
 
 <!--父组件-->
 ```
@@ -69,7 +69,7 @@ export default {
 
 ```
 
-# 子组件调用父组件方法
+### 子组件调用父组件方法
 
 <!--子组件-->
 
@@ -87,7 +87,7 @@ export default {
 
 ```
 
-# 兄弟组件间通讯
+### 兄弟组件间通讯
 
 ```
 ##父传子 子传父方式 
