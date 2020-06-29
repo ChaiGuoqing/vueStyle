@@ -99,12 +99,14 @@ export default {
 
 ```
 
+```
 ##建中转站方式
   brotherC.vue
   brotherD.vue
 
 ```
 
+```
 ##vuex方式
   brotherE.vue
   brotherF.vue  
