@@ -39,7 +39,7 @@
       <p>    default:默认值</p>
       <p>   }</p>
       <p> })</p>
-      <p> <span style="color:red">message必须和父组件绑定到名称一致</span></p>
+      <p> <span style="color:red">message必须和父组件绑定的名称一致</span></p>
       <span>
         2.子组件向父组件传参
       </span>

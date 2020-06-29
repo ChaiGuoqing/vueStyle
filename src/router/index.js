@@ -154,6 +154,18 @@ export const constantRoutes = [
         component: () => import('@/views/comsmit/brother/index'),
         meta: { title: '兄弟组件', icon: 'tree' }
       }
+      // {
+      //   path: 'brother1',
+      //   name: '组件A',
+      //   component: () => import('@/views/comsmit/brother/brotherA'),
+      //   meta: { title: '组件A', icon: 'tree' }
+      // },
+      // {
+      //   path: 'brother2',
+      //   name: '组件B',
+      //   component: () => import('@/views/comsmit/brother/brotherB'),
+      //   meta: { title: '组件B', icon: 'tree' }
+      // }
     ]
   },
 
