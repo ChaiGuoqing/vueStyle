@@ -18,8 +18,8 @@
                     </div>
                   </template>
                   <template slot="paneR">
-                    <div ref="myCharts" class="center-container">
-                      <!-- <mapVue /> -->
+                    <div class="center-container">
+                      <mapVue />
                     </div>
                   </template>
                 </split-pane>
@@ -45,17 +45,14 @@
 </template>
 
 <script>
-import echarts from 'echarts'
-import option from './js/mapOption'
-// import 'echarts/map/js/province/guangdong.js'
-import 'echarts/map/js/china.js' // 引入中国地图数据
-require('echarts/theme/macarons')
 import { mapGetters } from 'vuex'
 import splitPane from 'vue-splitpane'
+import mapVue from './components/map'
 export default {
   name: 'Home',
   components: {
-    splitPane
+    splitPane,
+    mapVue
   },
   data() {
     return {
@@ -66,18 +63,10 @@ export default {
     ...mapGetters(['name'])
   },
   mounted() {
-    this.mapEchartsInit()
   },
   // 方法集合
   methods: {
-    mapEchartsInit() {
-      var _that = this
-      _that.myChart = echarts.init(this.$refs.myCharts, 'macarons')
-      _that.myChart.setOption(option, true)
-      window.onresize = function() {
-        _that.myChart.resize()
-      }
-    }
+
   }
 }
 </script>
