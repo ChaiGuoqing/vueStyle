@@ -168,7 +168,27 @@ export const constantRoutes = [
       // }
     ]
   },
-
+  {
+    path: '/animation',
+    component: Layout,
+    redirect: '/animation/tableAnimation',
+    name: '动画组件',
+    meta: { title: '动画组件', icon: 'el-icon-s-help' },
+    children: [
+      {
+        path: 'tableAnimation',
+        name: 'table动画',
+        component: () => import('@/views/animation/tableAnimation'),
+        meta: { title: 'table动画', icon: 'link' }
+      },
+      {
+        path: 'count',
+        name: 'Count动画',
+        component: () => import('@/views/animation/count'),
+        meta: { title: 'Count动画', icon: 'link' }
+      }
+    ]
+  },
   { path: '*', redirect: '/404', hidden: true }
 ]
 
