@@ -26,7 +26,7 @@
               </template>
               <template slot="paneR">
                 <div class="right-container">
-                  b1
+                  <tableAnimation />
                 </div>
               </template>
             </split-pane>
@@ -48,11 +48,13 @@
 import { mapGetters } from 'vuex'
 import splitPane from 'vue-splitpane'
 import mapVue from './components/map'
+import tableAnimation from './components/tableAnimation'
 export default {
   name: 'Home',
   components: {
     splitPane,
-    mapVue
+    mapVue,
+    tableAnimation
   },
   data() {
     return {
@@ -77,6 +79,7 @@ export default {
     padding: 10px;
     position: relative;
     height: calc(100vh - 50px);
+    background: #080a20;
   }
   &-text {
     font-size: 30px;
@@ -84,19 +87,19 @@ export default {
   }
 }
   .left-container {
-    background-color: #F38181;
+    // background-color: #F38181;
     width: 100%;
     height: 100%;
   }
 
   .right-container {
-    background-color: #FCE38A;
+    // background-color: #FCE38A;
     width: 100%;
     height: 100%;
   }
 
   .top-container {
-    background-color: #fcc18a;
+    // background-color: #fcc18a;
     width: 100%;
     height: 100%;
   }
@@ -108,7 +111,7 @@ export default {
   }
   .bottom-container {
     width: 100%;
-    background-color: #95E1D3;
+    // background-color: #95E1D3;
     height: 100%;
   }
 </style>
