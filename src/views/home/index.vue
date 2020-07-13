@@ -87,7 +87,7 @@ export default {
   }
 }
   .left-container {
-    // background-color: #F38181;
+    background-color: #F38181;
     width: 100%;
     height: 100%;
   }
@@ -99,7 +99,7 @@ export default {
   }
 
   .top-container {
-    // background-color: #fcc18a;
+    background-color: #fcc18a;
     width: 100%;
     height: 100%;
   }
@@ -111,7 +111,7 @@ export default {
   }
   .bottom-container {
     width: 100%;
-    // background-color: #95E1D3;
+    background-color: #95E1D3;
     height: 100%;
   }
 </style>

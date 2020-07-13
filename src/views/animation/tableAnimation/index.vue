@@ -4,15 +4,28 @@
     <div>
       <el-row :gutter="20">
         <el-col :span="12">
+          <p> v-enter：定义进入过渡的开始状态</p>
+          <p> v-enter-active：定义进入活动状态</p>
+          <p> v-enter-to：定义进入结束状态</p>
+          <p> v-leave：定义离开过渡的开始状态</p>
+          <p> v-leave-active：定义离开活动状态</p>
+          <p> v-leave-to：定义离开结束状态</p>
           <div>
             <transition-group name="myGroup">
               <li v-for="(item,index) in list" :key="item.id" class="mytable" @click="del(index)">
                 <span> {{ item.id }}</span>
                 <span>{{ item.name }}</span>
                 <span>{{ item.nickname }}</span>
-                <!-- {{ item.id }}----{{ item.name }}----{{ item.nickname }} -->
               </li>
             </transition-group>
+
+            <!-- <transition model="out-in" name="left">
+              <li v-for="(item,index) in list" :key="item.id" @click="del(index)">
+                <span> {{ item.id }}</span>
+                <span>{{ item.name }}</span>
+                <span>{{ item.nickname }}</span>
+              </li>
+            </transition> -->
           </div>
         </el-col>
         <el-col :span="12">
@@ -112,4 +125,20 @@ export default {
   .myGroup-move{
       transition: all 0.6s ease;
   }
+
+  // .left-enter {
+  //   transform: translateX(100%);
+  // }
+  // .left-enter-to {
+  //   transform: translateX(0);
+  // }
+  // .left-leave{
+  //   transform: translateX(0);
+  // }
+  // .left-leave-to {
+  //   transform: translateX(-100%);
+  // }
+  // .left-leave-active,.left-enter-active {
+  //   transition:2s;
+  // }
 </style>

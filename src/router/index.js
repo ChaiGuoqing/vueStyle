@@ -173,19 +173,40 @@ export const constantRoutes = [
     component: Layout,
     redirect: '/animation/tableAnimation',
     name: '动画组件',
-    meta: { title: '动画组件', icon: 'el-icon-s-help' },
+    meta: { title: '动画组件', icon: 'nested' },
     children: [
       {
         path: 'tableAnimation',
         name: 'table动画',
         component: () => import('@/views/animation/tableAnimation'),
-        meta: { title: 'table动画', icon: 'link' }
+        meta: { title: 'table动画', icon: 'nested' }
       },
       {
         path: 'count',
         name: 'Count动画',
         component: () => import('@/views/animation/count'),
-        meta: { title: 'Count动画', icon: 'link' }
+        meta: { title: 'Count动画', icon: 'nested' }
+      }
+    ]
+  },
+  {
+    path: '/flex',
+    component: Layout,
+    redirect: '/flex/attribute',
+    name: 'flex组件',
+    meta: { title: 'flex组件', icon: 'form' },
+    children: [
+      {
+        path: 'attribute',
+        name: 'Flex',
+        component: () => import('@/views/flex/attribute'),
+        meta: { title: 'Flex', icon: 'form' }
+      },
+      {
+        path: 'layout',
+        name: 'Layout',
+        component: () => import('@/views/flex/layout'),
+        meta: { title: 'Layout', icon: 'form' }
       }
     ]
   },
