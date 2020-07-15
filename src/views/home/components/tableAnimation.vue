@@ -3,28 +3,29 @@
   <div class="vueBox">
     <transition-group name="myGroup">
       <li v-for="(item,index) in list" :key="item.id" class="mytable" @click="del(index)">
-        <span> {{ item.id }}</span>
-        <span>{{ item.name }}</span>
-        <span>{{ item.nickname }}</span>
+        <span> {{ index }}</span>
+        <span>{{ item.city }}</span>
+        <span>{{ item.num }}</span>
       </li>
     </transition-group>
   </div>
 </template>
 
 <script>
-
+import { getCityList } from '@/api/home'
 export default {
   components: {},
   data() {
     return {
       list: [
-        { id: 1, name: '北京', nickname: '123' },
-        { id: 2, name: '上海', nickname: '458' },
-        { id: 3, name: '天津', nickname: '240' },
-        { id: 4, name: '广东', nickname: '458' },
-        { id: 5, name: '重庆', nickname: '477' },
-        { id: 6, name: '武汉', nickname: '358' }
-      ]
+        { id: 1, city: '北京', num: 123 },
+        { id: 2, city: '上海', num: 458 },
+        { id: 3, city: '天津', num: 240 },
+        { id: 4, city: '广东', num: 458 },
+        { id: 5, city: '重庆', num: 477 },
+        { id: 6, city: '武汉', num: 358 }
+      ],
+      listData: []
     }
   },
   // 监听属性 类似于data概念
@@ -36,6 +37,7 @@ export default {
   // 生命周期 - 创建完成（可以访问当前this实例）
   created() {
     setInterval(() => {
+      // this.getDataList()
       this.add()
     }, 3000)
   },
@@ -44,6 +46,15 @@ export default {
 
   },
   methods: {
+    getDataList() {
+      getCityList().then(res => {
+        this.listData = res.data.items
+        this.list = [{ id: Number(res.data.items.id), city: res.data.items.city, num: res.data.items.num }, ...this.list]
+        if (this.list.length > 6) {
+          this.list.splice(6, 1)
+        }
+      })
+    },
     del(i) {
       this.list.splice(i, 1)
     },
@@ -71,7 +82,7 @@ export default {
         default:
           break
       }
-      this.list = [{ id: num, name: n, nickname: nick }, ...this.list]
+      this.list = [{ id: num, city: n, num: nick }, ...this.list]
       if (this.list.length > 6) {
         this.list.splice(6, 1)
       }

@@ -1,8 +1,8 @@
 import request from '@/utils/request'
 
-export function getList(params) {
+export function getCityList(params) {
   return request({
-    url: '/vue-guoqing/table/list',
+    url: '/vue-guoqing/home/list',
     method: 'get',
     params
   })
