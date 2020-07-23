@@ -173,19 +173,25 @@ export const constantRoutes = [
     component: Layout,
     redirect: '/animation/tableAnimation',
     name: '动画组件',
-    meta: { title: '动画组件', icon: 'nested' },
+    meta: { title: '动画组件', icon: 'el-icon-news' },
     children: [
       {
         path: 'tableAnimation',
         name: 'table动画',
         component: () => import('@/views/animation/tableAnimation'),
-        meta: { title: 'table动画', icon: 'nested' }
+        meta: { title: 'table动画', icon: 'el-icon-aim' }
       },
       {
         path: 'count',
         name: 'Count动画',
         component: () => import('@/views/animation/count'),
-        meta: { title: 'Count动画', icon: 'nested' }
+        meta: { title: 'Count动画', icon: 'el-icon-reading' }
+      },
+      {
+        path: 'seamlessScroll',
+        name: 'Vue无缝滚动',
+        component: () => import('@/views/animation/seamlessScroll'),
+        meta: { title: 'Vue无缝滚动', icon: 'el-icon-tickets' }
       }
     ]
   },
@@ -194,19 +200,39 @@ export const constantRoutes = [
     component: Layout,
     redirect: '/flex/attribute',
     name: 'flex组件',
-    meta: { title: 'flex组件', icon: 'form' },
+    meta: { title: 'flex组件', icon: 'el-icon-takeaway-box' },
     children: [
       {
         path: 'attribute',
         name: 'Flex',
         component: () => import('@/views/flex/attribute'),
-        meta: { title: 'Flex', icon: 'form' }
+        meta: { title: 'Flex', icon: 'el-icon-bicycle' }
       },
       {
         path: 'layout',
         name: 'Layout',
         component: () => import('@/views/flex/layout'),
-        meta: { title: 'Layout', icon: 'form' }
+        meta: { title: 'Layout', icon: 'el-icon-truck' }
+      }
+    ]
+  },{
+    path: '/map',
+    component: Layout,
+    redirect: '/map/baiduMap',
+    name: '地图',
+    meta: { title: '地图', icon: 'el-icon-map-location' },
+    children: [
+      {
+        path: 'baiduMap',
+        name: 'BaiduMap',
+        component: () => import('@/views/map/baiduMap'),
+        meta: { title: 'BaiduMap', icon: 'el-icon-place' }
+      },
+      {
+        path: 'gaodeMap',
+        name: 'GaodeMap',
+        component: () => import('@/views/map/gaodeMap'),
+        meta: { title: 'GaodeMap', icon: 'el-icon-location-information' }
       }
     ]
   },

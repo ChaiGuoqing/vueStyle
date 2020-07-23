@@ -3,7 +3,7 @@
   <div class="vueBox">
     <transition-group name="myGroup">
       <li v-for="(item,index) in list" :key="item.id" class="mytable" @click="del(index)">
-        <span> {{ index }}</span>
+        <span> {{ index+1 }}</span>
         <span>{{ item.city }}</span>
         <span>{{ item.num }}</span>
       </li>
