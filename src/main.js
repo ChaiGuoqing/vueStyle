@@ -11,6 +11,10 @@ import '@/styles/index.scss' // global css
 import App from './App'
 import store from './store'
 import router from './router'
+import BaiduMap from 'vue-baidu-map'
+
+// 百度地图api调用
+Vue.use(BaiduMap, { ak: 'ZdhWed0atCUpGlTmsEWXiQYWgaZD0apt' })
 
 import scroll from 'vue-seamless-scroll'
 Vue.use(scroll)

@@ -1,7 +1,8 @@
 <template>
-  <div class="login-container" :style="{background:'url('+loginBg+')'}">
+  <div class="login-container">
+    <!-- <div class="login-container" :style="{background:'url('+loginBg+')'}"> -->
+    <canvas id="mycanvas">你的浏览器不支持canvas</canvas>
     <el-form ref="loginForm" :model="loginForm" :rules="loginRules" class="login-form" auto-complete="on" label-position="left">
-
       <div class="title-container">
         <h3 class="title">Login Form</h3>
       </div>
@@ -84,7 +85,15 @@ export default {
       loading: false,
       passwordType: 'password',
       redirect: undefined,
-      loginBg: require('@/assets/bg.jpg')
+      loginBg: require('@/assets/bg.jpg'),
+      canvastx: null,
+      fontsize: 18,
+      H: null,
+      W: null,
+      lie: null,
+      str: '01',
+      text: [],
+      timer: null
     }
   },
   watch: {
@@ -94,6 +103,15 @@ export default {
       },
       immediate: true
     }
+  },
+  mounted() {
+    this.H = window.innerHeight
+    this.W = window.innerWidth
+    this.lie = Math.floor(this.W / this.fontsize)
+    this.initCanvas()
+  },
+  beforeDestroy() {
+    clearInterval(this.timer)
   },
   methods: {
     showPwd() {
@@ -121,14 +139,48 @@ export default {
           return false
         }
       })
+    },
+    initCanvas() {
+      var mycanvas = document.getElementById('mycanvas')
+      this.canvastx = mycanvas.getContext('2d')
+
+      mycanvas.height = this.H
+      mycanvas.width = this.W
+      for (var i = 0; i < this.lie; i++) {
+        this.text.push(0)
+      }
+      this.canvastx.font = this.fontsize + 'px 微雅软黑'
+      const that = this
+      this.timer = setInterval(function() {
+        that.draw()
+      }, 1000 / 20)
+    },
+    draw() {
+      this.canvastx.fillStyle = 'rgba(0,0,0,0.08)'
+      this.canvastx.fillRect(0, 0, this.W, this.H)
+      this.canvastx.fillStyle = this.randColor()
+      for (var i = 0; i < this.lie; i++) {
+        var index = Math.floor(Math.random() * this.str.length)
+        var x = Math.floor(this.fontsize * i)
+        var y = this.text[i] * this.fontsize
+        this.canvastx.fillText(this.str[index], x, y)
+        if (y > this.H && Math.random() > 0.99) {
+          this.text[i] = 0
+        }
+        this.text[i]++
+      }
+    },
+    randColor() {
+      var r = Math.ceil(Math.random() * 155) + 100
+      var g = Math.ceil(Math.random() * 155) + 100
+      var b = Math.ceil(Math.random() * 155) + 100
+      return 'rgb(' + r + ',' + g + ',' + b + ')'
     }
   }
 }
 </script>
 
 <style lang="scss">
-/* 修复input 背景不协调 和光标变色 */
-/* Detail see https://github.com/PanJiaChen/vue-element-admin/pull/927 */
 
 $bg:#283443;
 $light_gray:#fff;
@@ -142,6 +194,9 @@ $cursor: #fff;
 
 /* reset element-ui css */
 .login-container {
+  height:100%;
+	width:100%;
+	overflow:hidden;
   .el-input {
     display: inline-block;
     height: 47px;
@@ -184,11 +239,13 @@ $light_gray:#eee;
   overflow: hidden;
 
   .login-form {
-    position: relative;
+    position: absolute;
     width: 520px;
     max-width: 100%;
-    padding: 160px 35px 0;
-    margin: 0 auto;
+    padding: 30px 35px;
+    top: 30%;
+    left: 37%;
+    background: rgba(1,185,209,0.31);
     overflow: hidden;
   }
 
