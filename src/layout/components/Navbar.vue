@@ -4,6 +4,9 @@
 
     <breadcrumb class="breadcrumb-container" />
 
+    <div style="display: inline-block;margin:10px;float:right">
+      <i class="el-icon-full-screen" style="font-size:26px;" @click="handleHelp" />
+    </div>
     <div class="right-menu">
       <el-dropdown class="avatar-container" trigger="click">
         <div class="avatar-wrapper">
@@ -41,6 +44,11 @@ export default {
       'avatar'
     ])
   },
+  data:{
+    return:{
+      fullscreen: false
+    }
+  },
   methods: {
     toggleSideBar() {
       this.$store.dispatch('app/toggleSideBar')
@@ -48,6 +56,38 @@ export default {
     async logout() {
       await this.$store.dispatch('user/logout')
       this.$router.push(`/login?redirect=${this.$route.fullPath}`)
+    },
+    handleHelp () {
+      const {href} = this.$router.resolve({
+        path: '/chart',
+      })
+      window.open(href, '_blank')
+    },
+    handleFullScreen(){
+      let element = document.documentElement;
+      if (this.fullscreen) {
+        if (document.exitFullscreen) {
+          document.exitFullscreen();
+        } else if (document.webkitCancelFullScreen) {
+          document.webkitCancelFullScreen();
+        } else if (document.mozCancelFullScreen) {
+          document.mozCancelFullScreen();
+        } else if (document.msExitFullscreen) {
+          document.msExitFullscreen();
+        }
+      } else {
+        if (element.requestFullscreen) {
+          element.requestFullscreen();
+        } else if (element.webkitRequestFullScreen) {
+          element.webkitRequestFullScreen();
+        } else if (element.mozRequestFullScreen) {
+          element.mozRequestFullScreen();
+        } else if (element.msRequestFullscreen) {
+          // IE11
+          element.msRequestFullscreen();
+        }
+      }
+      this.fullscreen = !this.fullscreen;
     }
   }
 }

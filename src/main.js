@@ -13,6 +13,10 @@ import store from './store'
 import router from './router'
 import BaiduMap from 'vue-baidu-map'
 
+//引入echart
+import echarts from 'echarts'
+Vue.prototype.$echarts = echarts
+
 // 百度地图api调用
 Vue.use(BaiduMap, { ak: 'ZdhWed0atCUpGlTmsEWXiQYWgaZD0apt' })
 
@@ -25,7 +29,8 @@ if (process.env.NODE_ENV === 'production') {
   const { mockXHR } = require('../mock')
   mockXHR()
 }
-
+// 适配flex
+import './common/flexible.js';
 // set ElementUI lang to EN
 Vue.use(ElementUI, { locale })
 // 如果想要中文版 element-ui，按如下方式声明

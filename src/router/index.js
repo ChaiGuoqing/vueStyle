@@ -236,7 +236,27 @@ export const constantRoutes = [
       }
     ]
   },
-  { path: '*', redirect: '/404', hidden: true }
+  // {
+  //   path: '/chart',
+  //   component: Layout,
+  //   redirect: '/chart/echart',
+  //   name: 'Echart',
+  //   meta: { title: 'Echart', icon: 'el-icon-map-location' },
+  //   children: [
+  //     {
+  //       path: 'Echart',
+  //       name: 'Echart',
+  //       component: () => import('@/views/chart/echart_vue'),
+  //       meta: { title: 'Echart', icon: 'el-icon-place' }
+  //     }
+  //   ]
+  // },
+  { path: '*', redirect: '/404', hidden: true },
+  {
+    path: '/chart',
+    name: 'Echart',
+    component: () => import('@/views/chart/echart_vue')
+  },
 ]
 
 const createRouter = () => new Router({

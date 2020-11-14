@@ -2,7 +2,7 @@
   "name": "vue-style",
   "version": "4.4.0",
   "description": "A vue style with Element UI & axios & iconfont & permission control & lint",
-  "author": "Pan <panfree23@gmail.com>",
+  "author": "chaiguoqing",
   "scripts": {
     "dev": "vue-cli-service serve",
     "build:prod": "vue-cli-service build",
@@ -16,7 +16,8 @@
   "dependencies": {
     "axios": "0.18.1",
     "core-js": "3.6.5",
-    "echarts": "^4.8.0",
+    "crypto-js": "^4.0.0",
+    "echarts": "^4.9.0",
     "element-ui": "2.13.2",
     "js-cookie": "2.2.0",
     "normalize.css": "7.0.0",

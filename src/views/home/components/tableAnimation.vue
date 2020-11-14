@@ -98,9 +98,10 @@ export default {
 //@import url(); 引入公共css类
   .vueBox{
     padding: 10px;
+    height: 3rem;
   }
   .mytable {
-    line-height: 45px;
+    line-height: 40px;
     list-style: none;
     color: #f1f1f1;
   }
