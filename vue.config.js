@@ -95,5 +95,9 @@ module.exports = {
           config.optimization.runtimeChunk('single')
         }
       )
+  },
+  transpileDependencies: ['@xdh/my'],
+  chainWebpack(chain) {
+    chain.resolve.alias.set('$ui', '@xdh/my/ui/lib')
   }
 }
